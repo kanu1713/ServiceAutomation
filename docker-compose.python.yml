@@ -1,0 +1,8 @@
+version: '3'
+services:
+  python-380:
+    restart: always
+    image: buildpack-deps:buster
+    volumes:
+      - "./:/usr/src/app"
+    command: /usr/src/app/wait-for-grid.sh python /usr/src/app/parallel_test_run.py

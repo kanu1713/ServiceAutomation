@@ -1,0 +1,9 @@
+version: '3'
+services:
+  locustio:
+    container_name: locustio
+    image: grubykarol/locust:0.10.0-python3.6-alpine3.9
+    volumes:
+      - ./docker/locustio/:/locustio/
+    ports:
+      - 8089:8089

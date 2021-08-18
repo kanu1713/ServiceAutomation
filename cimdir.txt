@@ -1,0 +1,303 @@
+.
+├── CIM_Automation_Test_Report.html
+├── LT.env
+├── Makefile
+├── README.md
+├── __pycache__
+├── bitbucket-pipelines.yml
+├── cg1loadtest.bat
+├── cg1loadtest.sh
+├── cimautomation.code-workspace
+├── cimdir.txt
+├── conftest.py
+├── docker
+│   ├── locustio
+│   │   └── Dockerfile
+│   ├── mongo
+│   │   ├── Dockerfile
+│   │   └── docker-entrypoint.sh
+│   ├── mountebank
+│   │   ├── Dockerfile
+│   │   ├── resources
+│   │   │   └── imposters
+│   │   │       ├── Defaults
+│   │   │       │   ├── imposters.ejs
+│   │   │       │   └── mockedNotFound.js
+│   │   │       ├── imposters.ejs
+│   │   │       ├── service1
+│   │   │       │   ├── imposters.ejs
+│   │   │       │   └── successResponse.js
+│   │   │       └── service2
+│   │   │           ├── imposters.ejs
+│   │   │           └── successResponse.js
+│   │   └── ssl
+│   │       ├── README
+│   │       ├── paddle_cert.crt
+│   │       └── paddle_cert.key
+│   ├── nginx
+│   │   ├── Dockerfile
+│   │   └── site.conf
+│   ├── php
+│   │   ├── Dockerfile
+│   │   └── entrypoint.sh
+│   └── python
+│       └── Dockerfile
+├── docker-compose.locustio.yml
+├── docker-compose.mocks.yml
+├── docker-compose.python.yml
+├── docker-compose.yml
+├── docker-entrypoint.sh
+├── imposters
+├── parallel_test_run.py
+├── pytest.ini
+├── requirements.txt
+├── routingcaseloadtest.sh
+├── services
+│   ├── dataitems
+│   ├── pega
+│   │   ├── __init__.py
+│   │   └── pegaservice.py
+│   └── workflowsteps
+├── settings_dev.py
+├── settings_stage.py
+├── tests
+│   ├── data
+│   │   ├── Routing\ Case\ Management\ Test\ data.xlsx
+│   │   ├── awb
+│   │   │   ├── 200-SearchCase.json
+│   │   │   └── SearchCaseStepTemplateEmailInteractionId.json
+│   │   ├── cg1
+│   │   │   ├── 200-Hardware.json
+│   │   │   ├── 200-HardwareOrderWithFederalFlagAsN.json
+│   │   │   ├── 200-HardwareOrderWithFederalFlagAsNull.json
+│   │   │   ├── 200-HardwareOrderWithFederalFlagAsY.json
+│   │   │   ├── 200-HardwareOrderWithNoBillToPartyIdAndNoEndCustomerPartyId.json
+│   │   │   ├── 200-HardwareOrderWithNoBillToPartyIdValidEndCustomerPartyId.json
+│   │   │   ├── 200-HardwareOrderWithValidBillToPartyId.json
+│   │   │   ├── 200-HardwareOrderWithValidBillToPartyIdAndNoEndCustomerPartyId.json
+│   │   │   ├── 200-HardwarePartyIDWithMultipleOrSingleTerritoriesWithConflictAsDistribution.json
+│   │   │   ├── 200-Hybrid.json
+│   │   │   ├── 200-Software.json
+│   │   │   ├── 400-BadRequest.json
+│   │   │   ├── SAVM_API_Data.txt
+│   │   │   ├── SAVM_UI_Data.txt
+│   │   │   ├── billtocrpartyid.json
+│   │   │   ├── endcustomercrpartyid.json
+│   │   │   └── results.json
+│   │   ├── csh
+│   │   │   ├── 200-CreateCase.json
+│   │   │   ├── 200-CreateCaseTestData.json
+│   │   │   ├── 200-CreateCaseui.json
+│   │   │   ├── Attachment.txt
+│   │   │   ├── CreateCase.csv
+│   │   │   ├── CreateCaseui.json
+│   │   │   ├── DS.csv
+│   │   │   ├── SEGCreateCaseWOSLOr.json
+│   │   │   ├── SEGCreateCaseWSLOr.json
+│   │   │   ├── credit_reassignment.json
+│   │   │   ├── customer_and_partner_data_template_1a
+│   │   │   │   ├── customer_and_partner_cr.json
+│   │   │   │   └── customer_and_partner_data_template_1a.json
+│   │   │   ├── customer_and_partner_data_template_1b
+│   │   │   │   ├── demonstration_loans_template_9c.json
+│   │   │   │   └── try_and_buy_and_general_inquiry.json
+│   │   │   ├── customer_and_partner_data_template_3a
+│   │   │   │   ├── demonstration_loans_template_9c.json
+│   │   │   │   └── try_and_buy_and_general_inquiry.json
+│   │   │   ├── customer_and_partner_data_template_3b
+│   │   │   │   ├── demonstration_loans_template_9c.json
+│   │   │   │   └── try_and_buy_and_general_inquiry.json
+│   │   │   ├── demonstration_loans_template_1
+│   │   │   │   ├── convert_loan_to_sale.json
+│   │   │   │   └── demonstration_loans_template_1.json
+│   │   │   ├── demonstration_loans_template_2
+│   │   │   │   ├── demo_loan_commercial_invoice.json
+│   │   │   │   └── demonstration_loans_template_2.json
+│   │   │   ├── demonstration_loans_template_3a
+│   │   │   │   ├── demo_order_status_and_app_inq.json
+│   │   │   │   └── demonstration_loans_template_3a.json
+│   │   │   ├── demonstration_loans_template_3b
+│   │   │   │   ├── demo_order_status_and_backlog.json
+│   │   │   │   └── demonstration_loans_template_3b.json
+│   │   │   ├── demonstration_loans_template_4
+│   │   │   │   ├── demo_product_availability.json
+│   │   │   │   ├── demonstration_loans_template_4.json
+│   │   │   │   └── eSTAR_tool_support.json
+│   │   │   ├── demonstration_loans_template_5
+│   │   │   │   ├── demo_product_listening.json
+│   │   │   │   └── demonstration_loans_template_5.json
+│   │   │   ├── demonstration_loans_template_6a
+│   │   │   │   ├── demo_returns_and_lost_in_transit.json
+│   │   │   │   └── demonstration_loans_template_6a.json
+│   │   │   ├── demonstration_loans_template_6b
+│   │   │   │   ├── demo_returns_and_unrecoverable.json
+│   │   │   │   └── demonstration_loans_template_6b.json
+│   │   │   ├── demonstration_loans_template_7a
+│   │   │   │   ├── demo_shipment.json
+│   │   │   │   └── demonstration_loans_template_7a.json
+│   │   │   ├── demonstration_loans_template_7b
+│   │   │   │   ├── demonstration_loans_template_7b.json
+│   │   │   │   └── modify_demo_order.json
+│   │   │   ├── demonstration_loans_template_8
+│   │   │   │   ├── demonstration_loans_template_8.json
+│   │   │   │   └── prioritize_demo_order.json
+│   │   │   ├── demonstration_loans_template_9a
+│   │   │   │   ├── demonstration_loans_template_9a.json
+│   │   │   │   └── try_and_buy_early_invoicing.json
+│   │   │   ├── demonstration_loans_template_9b
+│   │   │   │   ├── demonstration_loans_template_9b.json
+│   │   │   │   └── try_and_buy_extension.json
+│   │   │   ├── demonstration_loans_template_9c
+│   │   │   │   ├── demonstration_loans_template_9c.json
+│   │   │   │   └── try_and_buy_and_general_inquiry.json
+│   │   │   ├── hierarchy_and_assignment_template_1
+│   │   │   │   ├── assignment_setup.json
+│   │   │   │   └── hierarchy_and_assignment_template_1.json
+│   │   │   ├── hierarchy_and_assignment_template_2
+│   │   │   │   ├── hierarchy_and_assignment_template_2.json
+│   │   │   │   └── hierarchy_setup.json
+│   │   │   ├── hierarchy_and_assignment_template_3
+│   │   │   │   ├── hierarchy_and_assignement_template_3.json
+│   │   │   │   └── share_report_request.json
+│   │   │   ├── sales_crediting_and_claiming_template_1
+│   │   │   │   ├── claims_processing_and_reassignment.json
+│   │   │   │   ├── credit_reassignment.json
+│   │   │   │   ├── global_claiming_tool_support.json
+│   │   │   │   ├── overlay_assignment_issue.json
+│   │   │   │   └── sales_crediting_and_claiming_template_1.json
+│   │   │   ├── sales_crediting_and_claiming_template_2
+│   │   │   │   ├── oem_and_osm_partner_support.json
+│   │   │   │   └── sales_crediting_and_claiming_template_2.json
+│   │   │   ├── sales_crediting_and_claiming_template_3
+│   │   │   │   ├── sales_crediting_and_claiming_template_3.json
+│   │   │   │   └── sales_crediting_reports.json
+│   │   │   ├── sales_crediting_and_claiming_template_4
+│   │   │   │   ├── sales_crediting_and_claiming_template_4.json
+│   │   │   │   └── sales_crediting_reports.json
+│   │   │   ├── segWithOuttestdata.txt
+│   │   │   └── segWithtestdata.txt
+│   │   ├── email
+│   │   │   ├── 1_OneSupportTestDataForAssertions.json
+│   │   │   ├── 200_1_OneSupportTestData.json
+│   │   │   ├── 200_2_OneSupportTestData.json
+│   │   │   ├── 200_3_OneSupportTestData.json
+│   │   │   ├── 200_4_OneSupportTestData.json
+│   │   │   ├── 200_5_OneSupportTestData.json
+│   │   │   ├── 200_6_OneSupportTestData.json
+│   │   │   ├── 200_7_OneSupportTestData.json
+│   │   │   ├── 200_8_OneSupportTestData.json
+│   │   │   ├── 200_9_OneSupportTestData.json
+│   │   │   ├── 200_OneSupportTestData.json
+│   │   │   ├── 2_OneSupportTestDataForAssertions.json
+│   │   │   └── one_support_email_simulator_template1.json
+│   │   ├── pega
+│   │   │   ├── 200-CreateCase.json
+│   │   │   ├── 200-OrderOrchestration_CreateCase.json
+│   │   │   ├── 200-SearchCase.json
+│   │   │   └── 404-SearchCase.json
+│   │   ├── savm
+│   │   │   ├── 200-TerritorySearchBad.json
+│   │   │   ├── 200-TerritorySearchGood.json
+│   │   │   ├── 200-billtocrpartyidGood.json
+│   │   │   └── 200-endcustomercrpartyidGood.json
+│   │   └── schema
+│   │       └── ui_stepworkflow_schema.json
+│   ├── features
+│   │   ├── backend
+│   │   │   ├── cg1
+│   │   │   │   └── gettransactions.feature
+│   │   │   ├── pega
+│   │   │   │   ├── createcase.feature
+│   │   │   │   └── searchcase.feature
+│   │   │   └── savm
+│   │   │       └── searchterritory.feature
+│   │   └── frontend
+│   │       ├── awb
+│   │       │   ├── createcaseui.feature
+│   │       │   └── searchcaseui.feature
+│   │       ├── csh
+│   │       │   ├── createcaseui.feature
+│   │       │   ├── createcaseui_new.feature
+│   │       │   └── searchcaseui.feature
+│   │       └── email
+│   │           └── emailsimulator_ui.feature
+│   ├── load
+│   │   ├── cg1
+│   │   │   └── locustfile.py
+│   │   └── pega
+│   │       └── locustfile.py
+│   ├── pages
+│   │   ├── awb
+│   │   │   ├── __init__.py
+│   │   │   └── locators.py
+│   │   ├── core
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   ├── basepage.py
+│   │   │   ├── locators.py
+│   │   │   ├── loginpage.py
+│   │   │   └── stepspage.py
+│   │   └── csh
+│   │       ├── Segmentation_locators.py
+│   │       ├── __init__.py
+│   │       ├── __pycache__
+│   │       ├── locators.py
+│   │       └── searchcasepage.py
+│   └── step_defs
+│       ├── Test_Data.txt
+│       ├── awb
+│       │   ├── __pycache__
+│       │   ├── test_createcase_ui.py
+│       │   └── test_searchcaseui.py
+│       ├── cg1
+│       │   ├── __pycache__
+│       │   └── test_gettransactions.py
+│       ├── csh
+│       │   ├── __pycache__
+│       │   ├── awb_portal_casesearch.json
+│       │   ├── createcasetempletes.py
+│       │   ├── customer_and_partner_data_template_1b
+│       │   │   ├── customer_and_partner_bookings.json
+│       │   │   └── customer_and_partner_data_template_1b.json
+│       │   ├── customer_and_partner_data_template_3a
+│       │   │   ├── customer_and_partner_data_template_3a.json
+│       │   │   └── partner_registry_data_management_and_general_enquiries.json
+│       │   ├── customer_and_partner_data_template_3b
+│       │   │   ├── customer_and_partner_data_template_3b.json
+│       │   │   └── partner_registry_data_management.json
+│       │   ├── order_expedite_template_1a
+│       │   │   ├── expedite_manufacturing_order_and_entire_order.json
+│       │   │   └── order_expedite_template_1a.json
+│       │   ├── order_expedite_template_1b
+│       │   │   ├── expedite_manufacturing_order_and_partial_order.json
+│       │   │   └── order_expedite_template_1b.json
+│       │   ├── segcreatecasetempletes.py
+│       │   ├── test_create_case_ui.py
+│       │   ├── test_create_case_ui_new.py
+│       │   └── test_search_case_ui.py
+│       ├── email
+│       │   └── test_emailsimulator_ui.py
+│       ├── pega
+│       │   ├── test_create_case.py
+│       │   └── test_search_case.py
+│       └── savm
+│           └── test_searchterritory.py
+├── utils
+│   ├── auth
+│   │   └── tokenauth.py
+│   ├── reporting
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── testrail.cfg
+│   │   ├── testrail.py
+│   │   └── testrails.py
+│   └── testdatabuilder
+│       ├── CSVtoJSON.py
+│       ├── Createcasewithexcelparameters.py
+│       ├── __pycache__
+│       ├── createcasetempletes.py
+│       └── jsonwriter.py
+├── wait-for-grid.sh
+└── welcome-python.sh
+
+92 directories, 208 files
